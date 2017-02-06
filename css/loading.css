@@ -33,6 +33,7 @@ html,body {
   top: 200px;
   left: 30px;
   right:30px;
+}
 
 #loading-wrapper {
   position:relative;
@@ -44,18 +45,42 @@ html,body {
 }
 
 @keyframes expand-fill {
-  0%{border-width:10px;top:calc((100vh / 2) - 10px);left:calc((100vw / 2) - 10px);z-index:150;}
-  18.75%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:150;}
-  49.9999%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:150}
-  50%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:100;}
-  100%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:100;}
+  0% {
+    border-width:10px;
+    top:calc((100vh / 2) - 10px);
+    left:calc((100vw / 2) - 10px);
+    z-index:150;
+  }
+  18.75% {
+    border-width:60vw;
+    top:calc((100vh / 2) - 60vw);
+    left:calc((100vw / 2) - 60vw);
+    z-index:150;
+  }
+  49.9999% {
+    border-width:60vw;
+    top:calc((100vh / 2) - 60vw);
+    left:calc((100vw / 2) - 60vw);
+    z-index:150;
+  }
+  50% {
+    border-width:60vw;
+    top:calc((100vh / 2) - 60vw);
+    left:calc((100vw / 2) - 60vw);
+    z-index:100;
+  }
+  100% {
+    border-width:60vw;
+    top:calc((100vh / 2) - 60vw);
+    left:calc((100vw / 2) - 60vw);
+    z-index:100;
+  }
 }
 
 @keyframes move-before {
   0%{left:calc((100vw / -2) + 25px);}
   8.75%{left:calc((100vw / -2) + 25px);}
   40%{left:20px;}
-  49.9999%{left:20px;}
   50%{left:20px;}
   100%{left:20px;}
 }
@@ -64,7 +89,6 @@ html,body {
   0%{right:calc((100vw / -2) + 25px);}
   8.75%{right:calc((100vw / -2) + 25px);}
   40%{right:20px;}
-  49.9999%{right:20px;}
   50%{right:20px;}
   100%{right:20px;}
 }
@@ -76,6 +100,27 @@ html,body {
   49.9999%{transform:rotate(1600deg);z-index:200;}
   50%{transform:rotate(1600deg);z-index:100;}
   100%{transform:rotate(1600deg);z-index:100;}
+}
+
+@keyframes post-load {
+  0% {
+    margin-top:0;
+    height:100vh;
+    opacity:1;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
+  60% {
+    margin-top:90px;
+    height:calc(100vh-90px);
+    opacity:1;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
+  100% {
+    margin-top:90px;
+    height:calc(100vh-90px);
+    opacity:0;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
 }
 
 .loading-fill {
@@ -160,4 +205,8 @@ html,body {
 
 #loading-alt-center::after {
   animation:move-after 8000ms ease-out infinite 4000ms;
+}
+  
+.post-load-wrapper {
+  animation:post-load 4s forwards;
 }
