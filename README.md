@@ -2,7 +2,7 @@
 A simple loading animation using JS and CSS3
 The animation is technically pure CSS, it just uses JS to initialise and remove the animation as required
   
-You can watch it happen here[https://codepen.io/clarson469/pen/QdBpwJ]
+You can watch it happen [here] (https://codepen.io/clarson469/pen/QdBpwJ)
  - though it should be noted the code in the Pen is a bit different, but that's just to make it a better pen
   
 Contains two versions of the `main()` function:
