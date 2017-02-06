@@ -63,12 +63,27 @@ function animateWapper() {
 function main() {
   createElements();
   styleElements();
-  var wait = setTimeout(loadCallback,12000);
+  var wait = setTimeout(completeLoad,12000);
 }
+
+/* ###    for production use    ###
+
+function main() {
+  createElements();
+  styleElements();
+  var loop = setInterval(function() {
+    if (### INSERT CHECK HERE ###) {
+      clearTimeout(loop);
+      completeLoad();
+    }
+  },4000);
+}
+
+*/
 
 main();
 
-function loadCallback() {
+function completeLoad() {
   deleteElements(false);
   animateWapper();
   var secondWait = setTimeout(function() {
